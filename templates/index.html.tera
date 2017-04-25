@@ -1,0 +1,30 @@
+{% extends "base" %}
+{% block title %}qrpth.eu - Markov chain quote generator{% endblock title %}
+{% block main %}
+    <h1>Markov chain quote generator</h1>
+
+    <h2>Filters</h2>
+    <form>
+        <select name="mode" style="display: inline">
+            <option value="text" {% if form.mode == "text" %}selected{% endif %}>Limit quote text</option>
+            <option value="name" {% if form.mode == "name" %}selected{% endif %}>Limit quote attribution</option>
+        </select>
+
+        <input name="q" style="display: inline" value="{{ form.q }}">
+
+        <button type="submit" class="btn btn-a btn-sm">Filter</button>
+    </form>
+
+    <h2>Results</h2>
+    <ul>
+    {% for quote in quotes %}
+        <li>Quote #{{ quote.id }}: <em>"{{ quote.quote }}"</em>
+            {% if quote.attrib_name or quote.context %}
+                &#8212;
+                {% if quote.attrib_name %}{{ quote.attrib_name }}{% if quote.context %}, {% endif %}{% endif %}
+                {% if quote.context %}{{ quote.context }}{% endif %}
+            {% endif %}
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock main %}

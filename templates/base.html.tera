@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+        <head>
+                <title>{% block title %}qrpth.eu{% endblock title %}</title>
+                {% block css %}
+                        <link rel="stylesheet" href="/static/min.css">
+                        <link rel="stylesheet" href="/static/min-navbar.css">
+                {% endblock css %}
+                {% block head %}{% endblock head %}
+        </head>
+        <body>
+                <nav class="nav" tabindex="-1" onclick="this.focus()">
+                        <div class="container">
+                                <a class="pagename{%if page == "index"%} current{%endif%}" href="/">qrpth.eu</a>
+                                <div class="wpd">LRR stuff
+                                        <div class="pulldown">
+                                                <ul>
+                                                        <li><a href="http://lrrbot.mrphlip.com/">LRRbot</a></li>
+                                                        <li class="indent"><a href="https://github.com/mrphlip/lrrbot">Github repo</a></li>
+                                                        <li><a {%if page == "prism" %}class="current" {%endif%}href="/prism/">LRR chat logs</a></li>
+                                                        <li><a {% if page == "quotes" %}class="current" {% endif %}href="/quotes/">Markov chain quote generator</a></li>
+                                                </ul>
+                                        </div>
+                                </div>
+                                <div class="wpd">Other stuff
+                                        <div class="pulldown">
+                                                <ul>
+                                                        <li><a {%if page == "tz"%}class="current" {%endif%}href="/timezone">Timezone picker</a></li>
+                                                </ul>
+                                        </div>
+                                </div>
+                                <div class="navlink-right">
+                                        <a href="https://twitter.com/qrpth">Twitter</a>
+                                        <a href="https://github.com/andreasots">Github</a>
+                                </div>
+                        </div>
+                </nav>
+                <button class="btn-close btn btn-sm">×</button>
+                <main class="container">
+                        {% block main %}{% endblock main %}
+                </main>
+        </body>
+</html>

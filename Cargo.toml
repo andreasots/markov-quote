@@ -1,0 +1,21 @@
+[package]
+name = "markov-quote"
+version = "0.1.0"
+authors = ["Andreas Ots <qrpth@qrpth.eu>"]
+
+[dependencies]
+markov = "0.0.32"
+chrono = "0.3.0"
+diesel = { version = "0.12.0", features = ["postgres", "chrono"] }
+diesel_codegen = { version = "0.12.0", features = ["postgres"] }
+rocket = "0.2.6"
+rocket_codegen = "0.2.6"
+rocket_contrib = { version = "0.2.6", features = ["tera_templates"] }
+dotenv = "0.10.0"
+r2d2-diesel = "0.12.0"
+r2d2 = "0.7.2"
+error-chain = "0.10.0"
+rand = "0.3.15"
+serde = "0.9.14"
+serde_derive = "0.9.14"
+diesel_full_text_search = "0.12.0"
