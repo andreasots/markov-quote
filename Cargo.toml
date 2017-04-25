@@ -2,6 +2,7 @@
 name = "markov-quote"
 version = "0.1.0"
 authors = ["Andreas Ots <qrpth@qrpth.eu>"]
+license = "Apache-2.0"
 
 [dependencies]
 markov = "0.0.32"
